@@ -5,7 +5,7 @@ class Product(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(100), nullable = False)
-    price = db.Column(db.Integer, nullable = False)
+    price = db.Column(db.Float, nullable = False)
     small_quantity = db.Column(db.Integer, nullable = False)
     medium_quantity = db.Column(db.Integer, nullable = False)
     large_quantity = db.Column(db.Integer, nullable = False)

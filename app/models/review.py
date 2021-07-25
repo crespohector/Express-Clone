@@ -10,10 +10,10 @@ class Review(db.Model):
     comfort_rating = db.Column(db.Integer, nullable=False)
     quality_rating = db.Column(db.Integer, nullable=False)
     fit_rating = db.Column(db.Integer, nullable=False)
-    description = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
-    created_at = db.Column(db.DateTime, nullable=False)
+    description = db.Column(db.Text, nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
 
     def to_dict(self):
         return {
